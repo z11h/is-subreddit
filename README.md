@@ -7,12 +7,12 @@
 $ npm i --save is-subreddit
 ```
 
-## API
+## api
 ```javascript
 const check = require('is-subreddit')
 
 check('xboxone');
-//=> false
+//=> true
 
 check('hehehaha0099');
 //=> false
