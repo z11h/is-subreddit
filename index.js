@@ -9,7 +9,7 @@ function check(subreddit) {
       const hasSubscribe = content.includes(
         "click the subscribe or unsubscribe buttons to choose which subreddits appear on your front page."
       );
-      const exists = hasNothing && hasSubscribe;
+      const exists = !hasNothing && !hasSubscribe;
 
       console.log(
         exists
