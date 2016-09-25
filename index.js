@@ -2,7 +2,7 @@
 const got = require('got')
 
 function check(subreddit) {
-  got(`https://reddit.com/r/{subreddit}`)
+  got(`https://reddit.com/r/${subreddit}`)
     .then(response => {
       const content = response.body;
       const hasNothing = content.includes("there doesn't seem to be anything here");
