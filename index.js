@@ -14,7 +14,7 @@ function check(subreddit) {
       console.log(
         exists
          ? `Nope! ${subreddit} Doesn't exist!`
-         : 'Yup! ${subreddit} Totally exists!'
+         : `Yup! ${subreddit} Totally exists!`
       )
 
       return exists;
