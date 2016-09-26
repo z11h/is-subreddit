@@ -13,8 +13,8 @@ function check(subreddit) {
 
       console.log(
         exists
-         ? "Nope! Doesn't exist"
-         : 'Yup! Totally exists!'
+         ? `Nope! ${subreddit} Doesn't exist!`
+         : 'Yup! ${subreddit} Totally exists!'
       )
 
       return exists;
