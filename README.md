@@ -4,10 +4,10 @@
 ## getting started
 
 ```shell
-$ npm i --save is-subreddit
+$ npm install --save is-subreddit
 ```
 
-## api
+## usage
 ```javascript
 const check = require('is-subreddit')
 
@@ -17,3 +17,14 @@ check('xboxone');
 check('ThisIsDefNotASubreddit');
 //=> false
 ```
+
+## api 
+
+### check()
+
+Type: `<Function>`
+
+Returns a boolean (true if the subreddit exists, false if not).
+
+## related projects
+* [ ]()
