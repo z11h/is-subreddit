@@ -14,6 +14,6 @@ const check = require('is-subreddit')
 check('xboxone');
 //=> true
 
-check('hehehaha0099');
+check('ThisIsDefNotASubreddit');
 //=> false
 ```
