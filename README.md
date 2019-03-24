@@ -25,6 +25,3 @@ check('ThisIsDefNotASubreddit');
 Type: `<Function>`
 
 Returns a boolean (true if the subreddit exists, false if not).
-
-## related projects
-* [ ]()
