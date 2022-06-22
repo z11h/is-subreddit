@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/ZakariaRidouh/is-subreddit#readme",
   "dependencies": {
-    "got": "^6.5.0"
+    "got": "^11.8.5"
   }
 }
