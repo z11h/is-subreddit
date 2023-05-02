@@ -1,33 +1,31 @@
-'use strict';
-const got = require('got')
+import got from 'got';
 
-function check(subreddit = '') {
-  if (typeof subreddit === 'string') {
-  got(`https://reddit.com/r/${subreddit}`)
-    .then(response => {
-      const content = response.body;
-      
-      const hasName = content.includes(`${subreddit}`); // @todo: check the redirected url
-      const hasSearchBar = content.includes('search subreddits by name');
-      const hasNothing = content.includes("there doesn't seem to be anything here");
-      const hasSubscribeButtons = content.includes(
-        'click the subscribe or unsubscribe buttons to choose which subreddits appear on your front page.'
-      );
-    
-      const exists = !hasNothing && !hasSubscribeButtons && !hasSearch;
+async function doesSubredditExist(subreddit = '') {
+  if (typeof subreddit !== 'string' || subreddit.trim() === '') {
+    throw new Error('Subreddit name must be a non-empty string');
+  }
+  try {
+    const { body: content } = await got(`https://reddit.com/r/${subreddit}`);
 
-      console.log(
-        exists
-         ? `Nope! ${subreddit} Doesn't exist!`
-         : `Yup! ${subreddit} Totally exists!`
-      )
+    const hasName = content.includes(subreddit);
+    const hasSearchBar = content.includes('search subreddits by name');
+    const hasNothing = content.includes("there doesn't seem to be anything here");
+    const hasSubscribeButtons = content.includes(
+      'click the subscribe or unsubscribe buttons to choose which subreddits appear on your front page.'
+    );
 
-      return exists;
-    })
-    .catch(error => console.log(error.response.body));
-  } else {
-    throw new Error('Invalid string entered!');
+    const exists = !hasNothing && !hasSubscribeButtons && !hasSearchBar;
+
+    console.log(
+      exists
+        ? `Yup! ${subreddit} totally exists!`
+        : `Nope! ${subreddit} doesn't exist!`
+    );
+
+    return exists;
+  } catch (error) {
+    throw new Error(`Failed to check subreddit: ${error.message}`);
   }
 }
 
-module.exports = check
+export default doesSubredditExist;

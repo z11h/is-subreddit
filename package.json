@@ -1,14 +1,15 @@
 {
   "name": "is-subreddit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": ":aerial_tramway: a small npm module that tell you if a subreddit exists",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZakariaRidouh/is-subreddit.git"
+    "url": "git+https://github.com/z11h/is-subreddit.git"
   },
   "keywords": [
     "reddit"
@@ -16,10 +17,10 @@
   "author": "Zakaria Ridouh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ZakariaRidouh/is-subreddit/issues"
+    "url": "https://github.com/z11h/is-subreddit/issues"
   },
-  "homepage": "https://github.com/ZakariaRidouh/is-subreddit#readme",
+  "homepage": "https://github.com/z11h/is-subreddit#readme",
   "dependencies": {
-    "got": "^6.5.0"
+    "got": "*"
   }
 }

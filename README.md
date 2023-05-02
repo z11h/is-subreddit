@@ -9,18 +9,18 @@ $ npm install --save is-subreddit
 
 ## usage
 ```javascript
-const check = require('is-subreddit')
+import doesSubredditExist from 'is-subreddit'
 
-check('xboxone');
+doesSubredditExist('xboxone');
 //=> true
 
-check('ThisIsDefNotASubreddit');
+doesSubredditExist('ThisIsDefNotASubreddit');
 //=> false
 ```
 
 ## api 
 
-### check()
+### doesSubredditExist()
 
 Type: `<Function>`
 
